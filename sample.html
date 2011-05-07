@@ -1,0 +1,23 @@
+<html>
+<head>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+   <script type="text/javascript" src="jquery.mogade.js"></script>   
+   <style>
+      table.leaderboard{font-family:verdana;font-size:80%;border-collapse:collapse;}
+      table.leaderboard td{padding:3px 10px;}
+      table.leaderboard tbody td{border-bottom:1px solid #ccc;}
+      table.leaderboard tr.odd{background:#f0f0f0;}
+   </style>
+</head>
+<body>
+<div id="leaderboard">
+</div>
+
+<script type="text/javascript">
+$(document).ready(function()
+{
+   $('#leaderboard').mogade({lid: '4d58982c1d9517207b000006', data: {name: 'data', handler: function(data){return data;} }} )
+});
+</script>
+</body>
+</html>
