@@ -1,10 +1,18 @@
+#topscores{display:none;}
+#topscores div.scope {float:left;margin-right:25px;width:240px;}
+#topscores div.scope:nth-child(even) {margin-right:0;}
+#topscores h3{margin-bottom:5px;}
+#topscores ul{margin-bottom:10px;}
+#topscores li{padding:5px;border-bottom:1px solid #e0e0e0;}
+#topscores span{float:right;}
+#topscores .leaderboard_name{margin:20px 0;text-align:center;font-weight:bold;}
+
+
 #leaderboard {display:none;width:550px;}
 #leaderboard .leaderboard_name{margin:20px 0;text-align:center;font-weight:bold;}
-
 #leaderboard div.tabs{border-bottom:1px solid #ccc;overflow:auto;margin-bottom:5px;}
 #leaderboard div.tabs > div {float:left;padding:5px 20px;margin-right:5px;background:#fff;cursor:pointer;-moz-border-radius-topleft:4px;-webkit-border-top-left-radius:4px;-moz-border-radius-topright:4px;-webkit-border-top-right-radius:4px;border-top-right-radius:4px;border-top-left-radius:4px;}
 #leaderboard div.tabs > div.active{background:#eee;border:1px solid #ccc;border-bottom:none;}
-
 #leaderboard table{width:100%;display:none;border-collapse:collapse;}
 #leaderboard th{font-weight:bold;text-align:left;border-bottom:2px solid #666;}
 #leaderboard th.rank{width:50px;}
@@ -13,7 +21,6 @@
 #leaderboard td, #leaderboard th{padding:5px;}
 #leaderboard tbody tr{border-bottom:1px dashed #eee;}
 #leaderboard tbody tr:nth-last-child(-n+1){border-bottom:none}
-
 #leaderboard div.pager{margin-top:10px;}
 #leaderboard div.pager > div{cursor:pointer;color:#3B5998;padding:6px;border:1px solid #eee;-moz-border-radius: 4px;-webkit-border-radius: 4px;border-radius:4px;}
 #leaderboard div.pager div.prev{float:left;}
