@@ -7,10 +7,17 @@
 <body>
 <div id="leaderboard"></div>
 
+<div id="topscores"></div>
+
 <script type="text/javascript">
 $(document).ready(function()
 {
-  $('#leaderboard').leaderboard({lids: [['4d58982c1d9517207b000006', 'top scores'], ['4d6113c89ae3e77ee40001b0', 'fast game']], data: {name: 'data', handler: function(data){return data;} }} )
+  $('#leaderboard').leaderboard({lids: [['4d9735679ae3e714e2000051', 'ginKs']],
+records:5,
+scope:2,
+hidePager:true,
+hideYesterday:true});//,
+ //data: {name: 'data', handler: function(data){return "";} }} );
 });
 </script>
 </body>

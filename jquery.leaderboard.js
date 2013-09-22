@@ -10,7 +10,7 @@
       if (this.leaderboard) { return false; }
       var $container = $(this);
       var $table, $tbody, $error, $tabContainer, $pager, $lid = null;
-      var data = {lid: options.lids[0][0], scope: options.scope, page: options.page};
+      var data = {lid: options.lids[0][0], scope: options.scope, page: options.page, records:options.records ? options.records : defaults.records };
       var previousPage = 0;
       var self =
       {
@@ -48,7 +48,10 @@
           $tabs.append($('<div>').data('scope', 1).text('today'));
           $tabs.append($('<div>').data('scope', 2).text('this week'));
           $tabs.append($('<div>').data('scope', 3).text('overall'));
+		if(!options.hideYesterday)
+		{
           $tabs.append($('<div>').data('scope', 4).text('yesterday'));
+		}
           $tabs.delegate('div', 'click', self.scopeChanged);
           return $tabs.appendTo($container);
         },
@@ -146,6 +149,10 @@
           else if (previousPage < page){ self.loadNextRows(rows, 0, $tbody.children().length); }
           else{ self.loadPrevRows(rows, rows.length, $tbody.children().length); }
           previousPage = page;
+			if(options.hidePager)
+			{
+				self.setPagerVisibility(false, false);
+			}
         },
         loadNextRows: function(rows, index, previous)
         {
@@ -189,6 +196,7 @@
           $table.hide();
           $tbody.empty();
           self.setPagerVisibility(data['page'] > 1, false);
+			
           $error.text('no scores are available right now').show();
         },
         setPagerVisibility: function(prev, next)
